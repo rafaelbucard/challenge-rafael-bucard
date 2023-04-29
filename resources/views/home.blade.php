@@ -61,16 +61,21 @@
         button[type="submit"]:hover {
             background-color: #3e8e41;
         }
+        .error-message {
+            color: red;
+        }
     </style>
 </head>
 <body>
     <div class="card">
         <h1>Day Number</h1>
-        
+        @if(session('error'))
+            <div class="error-message">{{ session('error') }}</div>
+        @endif
         <form method="POST" action="{{ route('day-number') }}">
             @csrf
             <label for="date">Data:</label>
-            <input type="date" id="date" name="date">
+            <input type="text" id="date" name="date" required pattern="\d{4}-\d{2}-\d{2}" title="A data deve estar no formato aaaa-mm-dd">
             <br>
             <button type="submit">Enviar</button>
         </form>
