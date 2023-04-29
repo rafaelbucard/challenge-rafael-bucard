@@ -39,7 +39,12 @@ class DayNumberService
     {
         $this->date = $date;
     }
-
+    
+    /**
+     * execute
+     *
+     * @return DayNumberService|Exception
+     */
     public function execute()
     {
         $start = Carbon::createFromDate(1900, 1, 1);

@@ -8,9 +8,12 @@ use Illuminate\Http\Request;
 
 class DateController extends Controller
 {
+    
     /**
-     * Checks the date by returning the day of the year and the year
-     * Method POST 
+     * dayNumber
+     *
+     * @param  Request $request
+     * @return void
      */
     public function dayNumber(Request $request)
     {
